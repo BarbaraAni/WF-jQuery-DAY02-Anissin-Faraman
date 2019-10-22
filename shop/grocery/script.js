@@ -11,7 +11,7 @@ $(document).ready(function() {
             <div class='img' ><img src=${item[i].imgsrc}></div>
             <h1 id="demo1">${item[i].name}</h1>
             <p id="demo2">${item[i].desc}</p>
-            <p id="demo3"><button></button></p>
+            <p id="demo3">${item[i].price}</p>
           </a>
         </div>
       </li>`);
@@ -57,5 +57,13 @@ $(document).ready(function() {
                 scart.splice(x, 1)
             });
         }
-    })
+        var test= $(this).contents().find("demo3").text();
+        console.log(test);
+//        for(i=0 ; i<scart.length ; i++){
+//        if (scart[i]===items[].name){
+
+//    }
+//        $(".cart").append(`<h1>${sum}</h1>`)
+//    }
+})
 });
