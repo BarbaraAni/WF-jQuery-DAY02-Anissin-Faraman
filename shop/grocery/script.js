@@ -5,7 +5,6 @@ $(document).ready(function() {
 
     let item = [];
     item = items;
-    console.log(item);
 
     for (i = 0; i < item.length; i++) {
         $("#hexGrid").append(`<li class="hex">
@@ -20,10 +19,17 @@ $(document).ready(function() {
       </li>`);
       $("button:last").attr("id", "add" + i);
       $("#add" + i).text("Add to Cart").addClass("add");
+      $("add"+i).on(`click`,function(e){
+        count(e,target.id)
+        function count(x){
+        console.log(x)
+        amount = Number(document.getElementById("numb").innerHTML)
+        amount += amount
+          $(".cart").append($(items.name),amount)
+      }})
     }
 
     $.each(items, function(key, value) {
-        console.log(value.name);
     });
 });
 
