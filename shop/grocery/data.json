@@ -1,0 +1,64 @@
+var items = [{
+    "name":"milk",
+    "quantity":"1/2 L",
+    "price":"2 €",
+    "imgsrc":"img/milk.jpg",
+    "desc":" somthing",
+
+},{
+    "name":"banana",
+    "quantity":"1 kg",
+    "price":"2.99 €",
+    "imgsrc":"img/banana.jpg",
+    "desc":" banana",
+
+},{
+    "name":"Orange juice",
+    "quantity":"1 L",
+    "price":"1.99 €",
+    "imgsrc":"img/orange-j.jpg",
+    "desc":" just juice",
+
+},{
+    "name":"French Cheese",
+    "quantity":"1 kg",
+    "price":"200 €",
+    "imgsrc":"img/f-cheese.jpg",
+    "desc":" no cheese included",
+
+},{
+    "name":"Flame Thrower",
+    "quantity":"1",
+    "price":"50 btc",
+    "imgsrc":"img/f-thrower.jpg",
+    "desc":" for internal use only",
+
+},{
+    "name":"lemon",
+    "quantity":"5 kg",
+    "price":"9.99 €",
+    "imgsrc":"img/lemon.jpg",
+    "desc":" vitamine C free",
+
+},{
+    "name":"Hummus",
+    "quantity":"250 g",
+    "price":"2 €",
+    "imgsrc":"img/hummus.jpg",
+    "desc":" no one knows what's inside",
+
+},{
+    "name":"toilet paper",
+    "quantity":"12 rolls",
+    "price":"500,000 €",
+    "imgsrc":"img/t-paper.jpg",
+    "desc":"still cheaper than Gold ",
+
+},{
+    "name":"Evil Cat",
+    "quantity":"1 soul",
+    "price":"free",
+    "imgsrc":"img/cat.jpg",
+    "desc":"6 souls already wasted",
+
+}]
