@@ -11,7 +11,7 @@ $(document).ready(function() {
             <div class='img' ><img src=${item[i].imgsrc}></div>
             <h1 id="demo1">${item[i].name}</h1>
             <p id="demo2">${item[i].desc}</p>
-            <p id="demo3">${item[i].price}</p>
+            <p id="price${+i}">${item[i].price}</p>
           </a>
         </div>
       </li>`);
@@ -30,9 +30,11 @@ $(document).ready(function() {
 
     $.each(items, function(key, value) {});
     let scart = [];
+    let test1=-1;
     $(".hex").click(function() {
         var v = $(this).attr("value");
         let count = 1;
+       
 
         if ($.inArray(v, scart) != -1) {
             var cout = Number($(`#${v}`).html());
@@ -40,7 +42,11 @@ $(document).ready(function() {
 
         } else {
             scart.push(v);
-            $(".cart").append(`<li>${v}<span id=${v}>${count}</span><button id="remove${v}">X</button><button id="decrease${v}">--</button></li>`);
+            
+            test1+=1;
+            cost = $("#price"+test1).text();
+            console.log($("#price"+test1));
+            $(".cart").append(`<li>${v}<span id=${v}>${count}</span><button id="remove${v}">X</button><button id="decrease${v}">--</button><span id="cost">${cost}</span></li>`);
             $(`#decrease${v}`).click(function() {
                 var cout = Number($(`#${v}`).html())
                 if (cout === 1) {
@@ -57,13 +63,13 @@ $(document).ready(function() {
                 scart.splice(x, 1)
             });
         }
-        var test= $(this).contents().find("demo3").text();
-        console.log(test);
-//        for(i=0 ; i<scart.length ; i++){
-//        if (scart[i]===items[].name){
+        var sum = 0
+        sum += $("#cost").text() * $("#${v}").text()
+        console.log($("#cost").text())
+        console.log($("#${v}").text())
+        console.log(v)
+        $(".cart").append(`<h1>${sum}</h1>`)
 
-//    }
-//        $(".cart").append(`<h1>${sum}</h1>`)
-//    }
-})
+    })
+
 });
