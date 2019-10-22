@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    $('body').append(`<div class="grid" > <ul id="hexGrid"></ul></div>`);
+    $('body').append(`<div class="grid" > <ul id="hexGrid"> <div class="cart">
+
+    </div></ul></div>`);
 
 
 
@@ -8,8 +10,8 @@ $(document).ready(function() {
     console.log(item);
 
     for (i = 0; i < item.length; i++) {
-        $("#hexGrid").append(`<li class="hex">
-        <div class="hexIn">
+        $("#hexGrid").append(`<li class="hex" value=${item[i].name}>
+        <div class="hexIn" >
           <a class="hexLink" href="#">
             <div class='img' ><img src=${item[i].imgsrc}></div>
             <h1 id="demo1">${item[i].name}</h1>
@@ -25,6 +27,13 @@ $(document).ready(function() {
     $.each(items, function(key, value) {
         console.log(value.name);
     });
+    $(".hex").click(function() {
+      var v = $(this).attr("value");
+      $(".cart").append(`<li>${v}</li>`)
+      
+     
+     
+    })
 });
 
 /*
