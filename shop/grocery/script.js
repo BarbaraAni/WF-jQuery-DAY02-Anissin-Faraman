@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    $('body').append(`<div class="grid" > <ul id="hexGrid"></ul></div>`);
+    $('body').append(`<div class="grid" > <ul id="hexGrid"> <div class="cart">
+
+    </div></ul></div>`);
 
 
 
@@ -7,8 +9,8 @@ $(document).ready(function() {
     item = items;
 
     for (i = 0; i < item.length; i++) {
-        $("#hexGrid").append(`<li class="hex">
-        <div class="hexIn">
+        $("#hexGrid").append(`<li class="hex" value=${item[i].name}>
+        <div class="hexIn" >
           <a class="hexLink" href="#">
             <div class='img' ><img src=${item[i].imgsrc}></div>
             <h1 id="demo1">${item[i].name}</h1>
@@ -31,6 +33,34 @@ $(document).ready(function() {
 
     $.each(items, function(key, value) {
     });
+    let scart=[];
+    $(".hex").click(function() {
+      var v = $(this).attr("value");
+      let count=1;
+      
+      console.log("this is ***"+v);
+      if($.inArray(v,scart) !=-1){ 
+        console.log(v);
+        var cout= Number($(`#${v}`).html());
+        $(`#${v}`).text(`${cout+=1}`);
+        
+
+      }
+      else{
+      scart.push(v);
+
+        $(".cart").append(`<li>${v}<span id=${v}>${count}</span> <button id="add">++</button><button id="remove">--</button></li>`);
+       
+      
+      }
+      $("#remove").click(function(){$(this).parent("li").remove()});
+      
+      
+     
+    })
+    
+   
+   
 });
 
 /*
