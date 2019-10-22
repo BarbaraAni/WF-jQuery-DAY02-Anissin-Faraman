@@ -27,13 +27,34 @@ $(document).ready(function() {
     $.each(items, function(key, value) {
         console.log(value.name);
     });
+    let scart=[];
     $(".hex").click(function() {
       var v = $(this).attr("value");
-      $(".cart").append(`<li>${v}</li>`)
+      let count=1;
+      
+      console.log("this is ***"+v);
+      if($.inArray(v,scart) !=-1){ 
+        console.log(v);
+        var cout= Number($(`#${v}`).html());
+        $(`#${v}`).text(`${cout+=1}`);
+        
+
+      }
+      else{
+      scart.push(v);
+
+        $(".cart").append(`<li>${v}<span id=${v}>${count}</span> <button id="add">++</button><button id="remove">--</button></li>`);
+       
+      
+      }
+      $("#remove").click(function(){$(this).parent("li").remove()});
+      
       
      
-     
     })
+    
+   
+   
 });
 
 /*
