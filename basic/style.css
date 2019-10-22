@@ -1,0 +1,26 @@
+.box{
+    max-width:30%;
+
+}
+.box>img{
+    width:100%;
+}
+.container{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+#output{
+    position: fixed ;
+    left: 50%;
+    text-align: center;
+    font-size: 2em;
+    background-color: gray;
+    border-radius: 11%;
+  
+}
+body{
+    text-align: center;
+}

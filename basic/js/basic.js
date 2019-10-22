@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 
 
@@ -18,9 +16,13 @@
         };
         $(".box").click(function(){
             var v=$(this).attr("value");
-            console.log(v);
+        if(v=="Santa"){
+            $(this).remove();
+        }   
+        else{
+            $("#output").text(v);
+        }
         
         })
 
 
->>>>>>> e38041b64913d51de617035bb392ec9de59a02d3
