@@ -13,7 +13,8 @@ $(document).ready(function(){
           <a class="hexLink" href="#">
             <div class='img' ><img src=${item[i].imgsrc}></div>
             <h1 id="demo1">${item[i].name}</h1>
-            <p id="demo2">${item[i].desc}</p>
+            <p id="demo2">${item[i].desc} </p>
+            <p id="demo3"><button>Add to cart </button></p>
           </a>
         </div>
       </li>`);

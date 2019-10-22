@@ -107,6 +107,13 @@ text-align: center;
 text-transform: uppercase;
     
 }
+#demo3 {
+  top: 70%;
+ align-items: center;
+  margin-left:-2.8em;
+  text-transform: uppercase;
+      
+  }
 
 .img {
     background-color : green;
@@ -155,6 +162,7 @@ transition: 0.8s;
 .hexIn:hover .hexLink {
   opacity: 1;
 }
+
 
 
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
