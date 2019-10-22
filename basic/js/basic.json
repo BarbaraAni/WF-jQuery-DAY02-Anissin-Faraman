@@ -1,0 +1,10 @@
+var christmas = [{
+	"name":"Santa",
+	"img":"./img/santa-claus.png"
+},{
+	"name":"Christmas Bells",
+	"img":"./img/1-2-christmas-bell-png-image.png"
+},{
+	"name":"Present",
+	"img":"./img/White_Gift_Box_with_Red_Bow_PNG_Image_2048x.png"
+}]
