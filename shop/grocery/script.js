@@ -1,9 +1,5 @@
 $(document).ready(function() {
-    $('body').append(`<div class="grid" > <ul id="hexGrid"> <div class="cart">
-
-    </div></ul></div>`);
-
-
+    $('body').append(`<div class="grid" > <ul id="hexGrid"> <div class="cart"></div></ul></div>`);
 
     let item = [];
     item = items;
@@ -19,67 +15,41 @@ $(document).ready(function() {
           </a>
         </div>
       </li>`);
-      $("button:last").attr("id", "add" + i);
-      $("#add" + i).text("Add to Cart").addClass("add");
-      $("add"+i).on(`click`,function(e){
-        count(e,target.id)
-        function count(x){
-        console.log(x)
-        amount = Number(document.getElementById("numb").innerHTML)
-        amount += amount
-          $(".cart").append($(items.name),amount)
-      }})
+        $("button:last").attr("id", "add" + i);
+        $("#add" + i).text("Add to Cart").addClass("add");
+        $("add" + i).on(`click`, function(e) {
+            count(e, target.id)
+
+            function count(x) {
+                console.log(x)
+                amount = Number(document.getElementById("numb").innerHTML)
+                amount += amount
+                $(".cart").append($(items.name), amount)
+            }
+        })
     }
 
-    $.each(items, function(key, value) {
-    });
-    let scart=[];
+    $.each(items, function(key, value) {});
+    let scart = [];
     $(".hex").click(function() {
-      var v = $(this).attr("value");
-      let count=1;
-      
-      console.log("this is ***"+v);
-      if($.inArray(v,scart) !=-1){ 
-        console.log(v);
-        var cout= Number($(`#${v}`).html());
-        $(`#${v}`).text(`${cout+=1}`);
-        
+        var v = $(this).attr("value");
+        let count = 1;
 
-      }
-      else{
-      scart.push(v);
+        console.log("this is ***" + v);
+        if ($.inArray(v, scart) != -1) {
+            console.log(v);
+            var cout = Number($(`#${v}`).html());
+            $(`#${v}`).text(`${cout+=1}`);
 
-        $(".cart").append(`<li>${v}<span id=${v}>${count}</span> <button id="add">++</button><button id="remove">--</button></li>`);
-       
-      
-      }
-      $("#remove").click(function(){$(this).parent("li").remove()});
-      
-      
-     
-    })
-    
-   
-   
-});
-
-/*
-        addButt = document.getElementById("but" + i)
-        addButt.onclick = function(e) {
-            addCount(e.target.id);
-            function addCount(x) {
-                current = Number(x.substring(3, 10))
-                y = document.getElementById("count" + current)
-                amount = Number(document.getElementById("count" + current).innerHTML.slice(14));
-                amount += 1
-                y.innerHTML = "In your cart: " + amount;
-                if (amount >= 5) {
-                    $("#grocDiv" + current).css("background-color", "#DEF0FD");
-                } else {
-                    $("#grocDiv" + current).css("background-color", "#DEFDE0");
-                }
-            };
+        } else {
+            scart.push(v);
+            $(".cart").append(`<li>${v}<span id=${v}>${count}</span><button id="remove${v}">X</button></li>`);
+            $(`#remove${v}`).click(function() {
+                $(this).parent("li").remove()
+                x = Array.prototype.indexOf(v);
+                scart.splice(x, 1)
+                console.log(x)
+            });
         }
-    }
-
-*/
+    })
+});
