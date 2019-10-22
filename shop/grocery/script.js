@@ -21,7 +21,6 @@ $(document).ready(function() {
             count(e, target.id)
 
             function count(x) {
-                console.log(x)
                 amount = Number(document.getElementById("numb").innerHTML)
                 amount += amount
                 $(".cart").append($(items.name), amount)
@@ -35,20 +34,27 @@ $(document).ready(function() {
         var v = $(this).attr("value");
         let count = 1;
 
-        console.log("this is ***" + v);
         if ($.inArray(v, scart) != -1) {
-            console.log(v);
             var cout = Number($(`#${v}`).html());
             $(`#${v}`).text(`${cout+=1}`);
 
         } else {
             scart.push(v);
-            $(".cart").append(`<li>${v}<span id=${v}>${count}</span><button id="remove${v}">X</button></li>`);
+            $(".cart").append(`<li>${v}<span id=${v}>${count}</span><button id="remove${v}">X</button><button id="decrease${v}">--</button></li>`);
+            $(`#decrease${v}`).click(function() {
+                var cout = Number($(`#${v}`).html())
+                if (cout === 1) {
+                    $(this).parent("li").remove()
+                    x = Array.prototype.indexOf(v);
+                    scart.splice(x, 1)
+                } else {
+                    $(`#${v}`).text(`${cout-=1}`);
+                }
+            })
             $(`#remove${v}`).click(function() {
                 $(this).parent("li").remove()
                 x = Array.prototype.indexOf(v);
                 scart.splice(x, 1)
-                console.log(x)
             });
         }
     })
